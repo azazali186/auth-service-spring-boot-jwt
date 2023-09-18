@@ -61,13 +61,13 @@ public class RouteNameFetcher {
 
         }
 
-        Optional<RoleEntity> optionalRole = roleRepo.findByName("admin");
+        Optional<RoleEntity> optionalRole = roleRepo.findByName("ADMIN");
         RoleEntity adminRole;
         if (optionalRole.isPresent()) {
             adminRole = optionalRole.get();
         } else {
             adminRole = new RoleEntity();
-            adminRole.setName("admin");
+            adminRole.setName("ADMIN");
             adminRole.setDesc("Administrator role");  // Set a description if needed
         }
        adminRole.setPermissions(allPermissions);
